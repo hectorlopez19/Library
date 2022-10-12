@@ -1,0 +1,193 @@
+JFDML JFormDesigner: "8.0.0.0.194" Java: "17.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 1
+			"hGap": 0
+			"vGap": 0
+		} ) {
+			name: "this"
+			"name": "homeFrame"
+			"minimumSize": new java.awt.Dimension( 1000, 600 )
+			"title": "TMC Library"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+				"$columnCount": 1
+				"$rowCount": 2
+				"hGap": 0
+				"vGap": 0
+			} ) {
+				name: "bgPanel"
+				"preferredSize": new java.awt.Dimension( 1000, 600 )
+				"background": new java.awt.Color( 34, 36, 53, 255 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+					"$columnCount": 1
+					"$rowCount": 1
+				} ) {
+					name: "headerPanel"
+					"minimumSize": new java.awt.Dimension( 85, 10 )
+					"preferredSize": new java.awt.Dimension( 1000, 250 )
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"background": new java.awt.Color( 34, 36, 53, 255 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "headerLabel"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/view/img/header-image.png" )
+						"horizontalTextPosition": 0
+						"text": "TMC LIBRARY"
+						"iconTextGap": 0
+						"horizontalAlignment": 0
+						"font": new java.awt.Font( "Roboto Light", 0, 30 )
+						"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"fill": 3
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+					"$columnCount": 1
+					"$rowCount": 2
+					"margin": new java.awt.Insets( 0, 0, 10, 0 )
+				} ) {
+					name: "contentPanel"
+					"preferredSize": new java.awt.Dimension( 1000, 350 )
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"background": new java.awt.Color( 34, 36, 53, 255 )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+						"$columnCount": 1
+						"$rowCount": 1
+						"margin": new java.awt.Insets( 0, 20, 0, 20 )
+					} ) {
+						name: "menuBarPanel"
+						"background": new java.awt.Color( 255, 255, 255, 255 )
+						add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+							name: "menuBar"
+							"background": new java.awt.Color( 255, 255, 255, 255 )
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"borderPainted": false
+							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+								name: "studentsMenu"
+								"text": "Students"
+								"background": new java.awt.Color( 255, 255, 255, 255 )
+								"preferredSize": &Dimension0 new java.awt.Dimension( 320, 33 )
+								"horizontalTextPosition": 0
+								"horizontalAlignment": 0
+								"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+								"foreground": new java.awt.Color( 34, 36, 53, 255 )
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "registerStudentMenuItem"
+									"text": "Register"
+									"preferredSize": &Dimension1 new java.awt.Dimension( 320, 32 )
+									"horizontalTextPosition": 0
+									"horizontalAlignment": 0
+									"background": &Color0 new java.awt.Color( 47, 52, 76, 255 )
+									"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+									"foreground": new java.awt.Color( 228, 228, 228, 255 )
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "registerStudent", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "showStudentsMenuItem"
+									"text": "Show info"
+									"preferredSize": #Dimension1
+									"horizontalTextPosition": 0
+									"horizontalAlignment": 0
+									"background": #Color0
+									"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+									"foreground": new java.awt.Color( 228, 228, 228, 255 )
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "showStudents", true ) )
+								} )
+							} )
+							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+								name: "loansMenu"
+								"text": "Loans"
+								"background": new java.awt.Color( 255, 255, 255, 255 )
+								"preferredSize": #Dimension0
+								"horizontalTextPosition": 0
+								"horizontalAlignment": 0
+								"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+								"foreground": new java.awt.Color( 34, 36, 53, 255 )
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "registerLoanMenuItem"
+									"text": "Register"
+									"preferredSize": #Dimension1
+									"horizontalTextPosition": 0
+									"horizontalAlignment": 0
+									"background": #Color0
+									"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+									"foreground": new java.awt.Color( 228, 228, 228, 255 )
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "registerLoan", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "showLoansMenuItem"
+									"text": "Show info"
+									"preferredSize": #Dimension1
+									"horizontalTextPosition": 0
+									"horizontalAlignment": 0
+									"background": #Color0
+									"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+									"foreground": new java.awt.Color( 228, 228, 228, 255 )
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "showLoans", true ) )
+								} )
+							} )
+							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+								name: "booksMenu"
+								"text": "Books"
+								"background": new java.awt.Color( 255, 255, 255, 255 )
+								"preferredSize": #Dimension0
+								"horizontalTextPosition": 0
+								"horizontalAlignment": 0
+								"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+								"foreground": new java.awt.Color( 34, 36, 53, 255 )
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "registerBookMenuItem"
+									"text": "Register"
+									"preferredSize": #Dimension1
+									"horizontalTextPosition": 0
+									"horizontalAlignment": 0
+									"background": #Color0
+									"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+									"foreground": new java.awt.Color( 228, 228, 228, 255 )
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "registerBook", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JMenuItem" ) {
+									name: "showBooksMenuItem"
+									"text": "Show info"
+									"preferredSize": #Dimension1
+									"horizontalTextPosition": 0
+									"horizontalAlignment": 0
+									"background": #Color0
+									"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+									"foreground": new java.awt.Color( 228, 228, 228, 255 )
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "showBooks", true ) )
+								} )
+							} )
+						}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+							"fill": 1
+							"anchor": 1
+						} )
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"fill": 1
+						"anchor": 1
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "logOutButton"
+						"text": "Log out"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "logOut", true ) )
+					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+						"row": 1
+						"anchor": 2
+					} )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"row": 1
+					"fill": 3
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"fill": 3
+				"useParentLayout": false
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1000, 600 )
+		} )
+	}
+}
