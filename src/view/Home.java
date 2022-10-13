@@ -99,12 +99,6 @@ public class Home extends JFrame {
         {
             bgPanel.setPreferredSize(new Dimension(1000, 600));
             bgPanel.setBackground(new Color(0x222435));
-            bgPanel.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border
-            . EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER, javax
-            . swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,
-            12 ), java. awt. Color. red) ,bgPanel. getBorder( )) ); bgPanel. addPropertyChangeListener (new java. beans
-            . PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .
-            getPropertyName () )) throw new RuntimeException( ); }} );
             bgPanel.setLayout(new GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), 0, 0));
 
             //======== headerPanel ========
@@ -144,19 +138,19 @@ public class Home extends JFrame {
 
                 //======== menuBarPanel ========
                 {
-                    menuBarPanel.setBackground(Color.white);
+                    menuBarPanel.setBackground(new Color(0x2f344c));
                     menuBarPanel.setLayout(new GridLayoutManager(1, 1, new Insets(0, 20, 0, 20), -1, -1));
 
                     //======== menuBar ========
                     {
-                        menuBar.setBackground(Color.white);
+                        menuBar.setBackground(new Color(0x2f344c));
                         menuBar.setBorder(null);
                         menuBar.setBorderPainted(false);
 
                         //======== studentsMenu ========
                         {
                             studentsMenu.setText("Students");
-                            studentsMenu.setBackground(Color.white);
+                            studentsMenu.setBackground(new Color(0x2f344c));
                             studentsMenu.setPreferredSize(new Dimension(320, 33));
                             studentsMenu.setHorizontalTextPosition(SwingConstants.CENTER);
                             studentsMenu.setHorizontalAlignment(SwingConstants.CENTER);
@@ -190,7 +184,7 @@ public class Home extends JFrame {
                         //======== loansMenu ========
                         {
                             loansMenu.setText("Loans");
-                            loansMenu.setBackground(Color.white);
+                            loansMenu.setBackground(new Color(0x2f344c));
                             loansMenu.setPreferredSize(new Dimension(320, 33));
                             loansMenu.setHorizontalTextPosition(SwingConstants.CENTER);
                             loansMenu.setHorizontalAlignment(SwingConstants.CENTER);
@@ -224,7 +218,7 @@ public class Home extends JFrame {
                         //======== booksMenu ========
                         {
                             booksMenu.setText("Books");
-                            booksMenu.setBackground(Color.white);
+                            booksMenu.setBackground(new Color(0x2f344c));
                             booksMenu.setPreferredSize(new Dimension(320, 33));
                             booksMenu.setHorizontalTextPosition(SwingConstants.CENTER);
                             booksMenu.setHorizontalAlignment(SwingConstants.CENTER);
@@ -269,12 +263,14 @@ public class Home extends JFrame {
 
                 //---- logOutButton ----
                 logOutButton.setText("Log out");
+                logOutButton.setAutoscrolls(true);
+                logOutButton.setBorderPainted(false);
                 logOutButton.addActionListener(e -> logOut(e));
                 contentPanel.add(logOutButton, new GridConstraints(1, 0, 1, 1,
                     GridConstraints.ANCHOR_SOUTH, GridConstraints.FILL_NONE,
                     GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
                     GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-                    null, null, null));
+                    null, new Dimension(150, 25), null));
             }
             bgPanel.add(contentPanel, new GridConstraints(1, 0, 1, 1,
                 GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,

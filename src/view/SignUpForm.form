@@ -124,8 +124,8 @@
                   </grid>
                 </constraints>
                 <properties>
-                  <background color="-12301454"/>
-                  <borderPainted value="true"/>
+                  <background color="-11116912"/>
+                  <borderPainted value="false"/>
                   <contentAreaFilled value="true"/>
                   <defaultCapable value="true"/>
                   <focusPainted value="false"/>
@@ -141,8 +141,8 @@
                   </grid>
                 </constraints>
                 <properties>
-                  <background color="-12301454"/>
-                  <borderPainted value="true"/>
+                  <background color="-11116912"/>
+                  <borderPainted value="false"/>
                   <contentAreaFilled value="true"/>
                   <defaultCapable value="true"/>
                   <enabled value="true"/>

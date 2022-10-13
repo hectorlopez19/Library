@@ -1,6 +1,7 @@
 package controller;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import themes.HectogreTheme;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,11 +9,15 @@ import java.awt.*;
 public class LookAndFeelController {
     public static void loadLookAndFeel() {
         System.setProperty( "apple.awt.application.name", "Library" );
+
+        FlatDarkLaf.registerCustomDefaultsSource("themes");
+        HectogreTheme.setup();
         try {
-            UIManager.setLookAndFeel(new FlatDarkLaf());
+            UIManager.setLookAndFeel(new HectogreTheme());
         } catch (UnsupportedLookAndFeelException e) {
             throw new RuntimeException(e);
         }
-        UIManager.put("Button.background", new Color(255, 255, 255));
+
+        UIManager.put("TextComponent.arc", 10);
     }
 }

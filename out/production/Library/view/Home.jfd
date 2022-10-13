@@ -59,16 +59,16 @@ new FormModel {
 						"margin": new java.awt.Insets( 0, 20, 0, 20 )
 					} ) {
 						name: "menuBarPanel"
-						"background": new java.awt.Color( 255, 255, 255, 255 )
+						"background": new java.awt.Color( 47, 52, 76, 255 )
 						add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
 							name: "menuBar"
-							"background": new java.awt.Color( 255, 255, 255, 255 )
+							"background": new java.awt.Color( 47, 52, 76, 255 )
 							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
 							"borderPainted": false
 							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 								name: "studentsMenu"
 								"text": "Students"
-								"background": new java.awt.Color( 255, 255, 255, 255 )
+								"background": new java.awt.Color( 47, 52, 76, 255 )
 								"preferredSize": &Dimension0 new java.awt.Dimension( 320, 33 )
 								"horizontalTextPosition": 0
 								"horizontalAlignment": 0
@@ -100,7 +100,7 @@ new FormModel {
 							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 								name: "loansMenu"
 								"text": "Loans"
-								"background": new java.awt.Color( 255, 255, 255, 255 )
+								"background": new java.awt.Color( 47, 52, 76, 255 )
 								"preferredSize": #Dimension0
 								"horizontalTextPosition": 0
 								"horizontalAlignment": 0
@@ -132,7 +132,7 @@ new FormModel {
 							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 								name: "booksMenu"
 								"text": "Books"
-								"background": new java.awt.Color( 255, 255, 255, 255 )
+								"background": new java.awt.Color( 47, 52, 76, 255 )
 								"preferredSize": #Dimension0
 								"horizontalTextPosition": 0
 								"horizontalAlignment": 0
@@ -172,10 +172,13 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "logOutButton"
 						"text": "Log out"
+						"autoscrolls": true
+						"borderPainted": false
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "logOut", true ) )
 					}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 						"row": 1
 						"anchor": 2
+						"preferredSize": new java.awt.Dimension( 150, 25 )
 					} )
 				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 					"row": 1
