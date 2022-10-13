@@ -2,7 +2,14 @@ package view;
 
 
 
+import controller.LoanInfoController;
+import controller.StudentInfoController;
+
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class StudentInfo extends JFrame {
     private JPanel bgPanel;
@@ -27,7 +34,24 @@ public class StudentInfo extends JFrame {
         super(title);
         setContentPane(bgPanel);
 
-
+        studentsList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                StudentInfoController.studentSelected();
+            }
+        });
+        cleanButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StudentInfoController.cleanBtnClicked();
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StudentInfoController.backBtnClicked();
+            }
+        });
 
     }
 

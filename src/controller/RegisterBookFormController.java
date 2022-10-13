@@ -70,15 +70,6 @@ public class RegisterBookFormController {
         return correct;
     }
 
-    public static void register(String title, String author, String edition, String id) {
-        if(model.searchBook(id) != null) {
-            registerBookForm.getIdAlertLabel().setText("Student already registered");
-        }
-        else {
-            model.registerBook(title, author, edition, id);
-        }
-    }
-
 
     // -------------------------------------------------- Buttons --------------------------------------------------
     public static void saveBtnClicked() {
@@ -87,9 +78,15 @@ public class RegisterBookFormController {
             String author = registerBookForm.getAuthorTxt().getText();
             String edition = registerBookForm.getEditionTxt().getText();
             String id = registerBookForm.getIdTxt().getText();
-            register(title, author, edition, id);
-            end();
-            HomeController.start();
+            if(model.searchBook(id) != null) {
+                registerBookForm.getIdAlertLabel().setText("Student already registered");
+            }
+            else {
+                model.registerBook(title, author, edition, id);
+                end();
+                HomeController.start();
+            }
+
         }
     }
 
@@ -101,4 +98,7 @@ public class RegisterBookFormController {
         end();
         HomeController.start();
     }
+
+
+
 }

@@ -92,7 +92,7 @@
               <component id="c931b" class="javax.swing.JLabel" binding="studentLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="50" height="-1"/>
+                    <preferred-size width="70" height="-1"/>
                   </grid>
                 </constraints>
                 <properties>
@@ -156,7 +156,7 @@
               <component id="f4d21" class="javax.swing.JLabel" binding="bookLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="50" height="-1"/>
+                    <preferred-size width="70" height="-1"/>
                   </grid>
                 </constraints>
                 <properties>
@@ -360,7 +360,7 @@
                       <foreground color="-39587"/>
                       <horizontalAlignment value="0"/>
                       <horizontalTextPosition value="0"/>
-                      <text value="return date alert field is empty"/>
+                      <text value="return date alert"/>
                     </properties>
                   </component>
                 </children>

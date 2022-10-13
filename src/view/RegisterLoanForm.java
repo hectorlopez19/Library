@@ -1,6 +1,8 @@
 package view;
 
 
+import controller.RegisterLoanFormController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -56,19 +58,47 @@ public class RegisterLoanForm extends JFrame {
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                RegisterLoanFormController.saveBtnClicked();
             }
         });
         cleanButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                RegisterLoanFormController.cleanBtnClicked();
             }
         });
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                RegisterLoanFormController.backBtnClicked();
+            }
+        });
+        loanMonthTxt.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                RegisterLoanFormController.correctLoanMonth(e);
+            }
+        });
+        loanDayTxt.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                RegisterLoanFormController.correctLoanDay(e);
+            }
+        });
+        returnMonthTxt.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                RegisterLoanFormController.correctReturnMonth(e);
+            }
+        });
+        returnDayTxt.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                RegisterLoanFormController.correctReturnDay(e);
             }
         });
     }

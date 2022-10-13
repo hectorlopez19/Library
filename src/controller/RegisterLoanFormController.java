@@ -6,6 +6,8 @@ import model.Student;
 import view.RegisterBookForm;
 import view.RegisterLoanForm;
 
+import java.awt.event.KeyEvent;
+
 public class RegisterLoanFormController {
     public static RegisterLoanForm registerLoanForm = new RegisterLoanForm("Loan form");
     public static Model model;
@@ -66,33 +68,14 @@ public class RegisterLoanFormController {
             correct = true;
         }
         if(registerLoanForm.getReturnMonthTxt().getText().isEmpty() || registerLoanForm.getReturnDayTxt().getText().isEmpty() || registerLoanForm.getReturnYearTxt().getText().isEmpty()) {
-            registerLoanForm.getLoanDateAlertLabel().setText("Invalid return date");
+            registerLoanForm.getReturnDateAlertLabel().setText("Invalid return date");
             correct = false;
         }
         else {
-            registerLoanForm.getLoanDateAlertLabel().setText("");
+            registerLoanForm.getReturnDateAlertLabel().setText("");
             correct = true;
         }
         return correct;
-    }
-
-    public static void register(Student student, Book book, String loanDate, String returnDate) {
-        if(student != null && book != null) {
-            model.registerLoan(student, book, loanDate, returnDate);
-            return;
-        }
-        if(student == null) {
-            registerLoanForm.getStudentAlertLabel().setText("Student not found");
-        }
-        else {
-            registerLoanForm.getStudentAlertLabel().setText("");
-        }
-        if(book == null) {
-            registerLoanForm.getBookAlertLabel().setText("Book not available");
-        }
-        else {
-            registerLoanForm.getBookAlertLabel().setText("");
-        }
     }
 
 
@@ -110,9 +93,23 @@ public class RegisterLoanFormController {
             String returnYear = registerLoanForm.getReturnYearTxt().getText();
             String returnDate = returnMonth + " / " + returnDay + " / " + returnYear;
 
-            register(student, book, loanDate, returnDate);
-            end();
-            HomeController.start();
+            if(student != null && book != null) {
+                model.registerLoan(student, book, loanDate, returnDate);
+                end();
+                HomeController.start();
+            }
+            if(student == null) {
+                registerLoanForm.getStudentAlertLabel().setText("Student not found");
+            }
+            else {
+                registerLoanForm.getStudentAlertLabel().setText("");
+            }
+            if(book == null) {
+                registerLoanForm.getBookAlertLabel().setText("Book not available");
+            }
+            else {
+                registerLoanForm.getBookAlertLabel().setText("");
+            }
         }
     }
 
@@ -123,5 +120,66 @@ public class RegisterLoanFormController {
     public static void backBtnClicked() {
         end();
         HomeController.start();
+    }
+
+    // -------------------------------------------------- Text Fields --------------------------------------------------
+    public static boolean isSpecial(char character) {
+        if(character == KeyEvent.VK_ENTER || character == KeyEvent.VK_BACK_SPACE || character == KeyEvent.VK_DELETE) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public static boolean correctNumber(char character) {
+        if((character < '0' || character > '9') && !isSpecial(character)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    public static boolean size2(int size) {
+        if(size >= 2) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    public static void correctLoanDay(KeyEvent e) {
+        char character = e.getKeyChar();
+        int size = registerLoanForm.getLoanDayTxt().getText().length();
+        if(!correctNumber(character) || !size2(size)) {
+            registerLoanForm.getToolkit().beep();
+            e.consume();
+        }
+    }
+    public static void correctReturnDay(KeyEvent e) {
+        char character = e.getKeyChar();
+        int size = registerLoanForm.getReturnDayTxt().getText().length();
+        if(!correctNumber(character) || !size2(size)) {
+            registerLoanForm.getToolkit().beep();
+            e.consume();
+        }
+    }
+    public static void correctLoanMonth(KeyEvent e) {
+        char character = e.getKeyChar();
+        int size = registerLoanForm.getLoanMonthTxt().getText().length();
+        if(!correctNumber(character) || !size2(size)) {
+            registerLoanForm.getToolkit().beep();
+            e.consume();
+        }
+    }
+    public static void correctReturnMonth(KeyEvent e) {
+        char character = e.getKeyChar();
+        int size = registerLoanForm.getReturnMonthTxt().getText().length();
+        if(!correctNumber(character) || !size2(size)) {
+            registerLoanForm.getToolkit().beep();
+            e.consume();
+        }
     }
 }

@@ -21,6 +21,9 @@ public class Main {
         RegisterStudentFormController.model = model;
         RegisterBookFormController.model = model;
         RegisterLoanFormController.model = model;
+        StudentInfoController.model = model;
+        BookInfoController.model = model;
+        LoanInfoController.model = model;
         LoginController.start();
     }
 }

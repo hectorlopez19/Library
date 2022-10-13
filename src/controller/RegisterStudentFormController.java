@@ -70,15 +70,6 @@ public class RegisterStudentFormController {
         return correct;
     }
 
-    public static void register(String name, String id, String career, int grade) {
-        if(model.searchStudent(id) != null) {
-            registerStudentForm.getIdAlertLabel().setText("Book already registered");
-        }
-        else {
-            model.registerStudent(name, id, career, grade);
-        }
-    }
-
 
     // -------------------------------------------------- Buttons --------------------------------------------------
     public static void saveBtnClicked() {
@@ -87,9 +78,15 @@ public class RegisterStudentFormController {
             String id = registerStudentForm.getIdTxt().getText();
             String career = registerStudentForm.getCareerTxt().getText();
             int grade = Integer.parseInt(registerStudentForm.getGradeTxt().getText());
-            register(name, id, career, grade);
-            end();
-            HomeController.start();
+            if(model.searchStudent(id) != null) {
+                registerStudentForm.getIdAlertLabel().setText("Book already registered");
+            }
+            else {
+                model.registerStudent(name, id, career, grade);
+                end();
+                HomeController.start();
+            }
+
         }
     }
 

@@ -2,7 +2,13 @@ package view;
 
 
 
+import controller.BookInfoController;
+
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class BookInfo extends JFrame {
     private JPanel bgPanel;
@@ -27,8 +33,24 @@ public class BookInfo extends JFrame {
         super(title);
         setContentPane(bgPanel);
 
-
-
+        booksList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                BookInfoController.bookSelected();
+            }
+        });
+        cleanButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BookInfoController.cleanBtnClicked();
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BookInfoController.backBtnClicked();
+            }
+        });
     }
 
 

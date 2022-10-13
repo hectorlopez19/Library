@@ -36,6 +36,7 @@ public class HomeController {
     }
     public static void showStudents() {
         end();
+        StudentInfoController.start();
     }
 
     public static void registerBook() {
@@ -44,6 +45,7 @@ public class HomeController {
     }
     public static void showBooks() {
         end();
+        BookInfoController.start();
     }
 
     public static void registerLoan() {
@@ -52,6 +54,7 @@ public class HomeController {
     }
     public static void showLoans() {
         end();
+        LoanInfoController.start();
     }
 
     public static void logOutBtnClicked() {
